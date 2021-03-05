@@ -81,6 +81,7 @@
 		<div class="story-post">
 			<h3 class="story-index">{i + 1}.</h3>
 			<div class="story-info">
+				<!-- TODO - fix article link to whole article title -->
 				<p class="story-author">{story.title} <span class="story-url"><a href="{story.url}" target="_blank">{formatLink(story.url)}</a></span></p>
 				<p class="story-details">{story.score} points by {story.by} {timeConverter(story.time)}</p>
 			</div>
@@ -138,7 +139,6 @@
 
 	.story-info {
 		width: 94%;
-		/* border: solid purple; */
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -159,23 +159,4 @@
 		font-size: .85rem;
 	}
 
-
-
-	/* .story {
-		display: flex;
-		width: 100%;
-	} */
-
-	/* h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	} */
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
 </style>

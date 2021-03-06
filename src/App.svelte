@@ -60,7 +60,6 @@
 
 	// format the URL link and clear out faulty links
 	function formatLink(link) {
-		console.log(link)
 		if (link === undefined){
 			return link = " "
 		} else {
@@ -81,9 +80,10 @@
 		<div class="story-post">
 			<h3 class="story-index">{i + 1}.</h3>
 			<div class="story-info">
-				<!-- TODO - fix article link to whole article title -->
-				<p class="story-author">{story.title} <span class="story-url"><a href="{story.url}" target="_blank">{formatLink(story.url)}</a></span></p>
-				<p class="story-details">{story.score} points by {story.by} {timeConverter(story.time)}</p>
+				<p class="story-author"><a class="title-link" href="{story.url}" target="_blank">{story.title}</a>
+				<span class="story-url"><a href="{story.url}" target="_blank">{formatLink(story.url)}</a></span>
+				</p>
+				<p class="story-details">{story.score} points by {story.by} {timeConverter(story.time)}<span class='border'></span>comments: {story.descendants}</p>
 			</div>
 		</div>
 
@@ -99,8 +99,8 @@
 	main {
 		margin: 0;
 		padding: 0;
-		font-family: 'Quicksand', sans-serif;
-	}
+		font-family: 'Open Sans', sans-serif;
+		}
 	p {
 		margin: 0;
 		padding: 0;
@@ -111,6 +111,7 @@
 		flex-direction: column;
 		width: 90%;
 		margin: 0 auto;
+		background-color: #F6F6EF;
 	}
 
 	.story-banner {
@@ -119,10 +120,20 @@
 	}
 
 	.story-banner h3 {
-		color: white;
 		padding: .5rem;
 		margin: 0;
 		text-transform: uppercase;
+	}
+
+	.title-link {
+		text-decoration: none;
+		color: black;
+	}
+
+	.border {
+		border-right: .5px solid gray;
+		margin-left: 5px;
+		margin-right: 5px;
 	}
 
 	.story-index {
@@ -134,7 +145,7 @@
 	}
 	.story-post {
 		display: flex;
-		border-bottom: 1px solid gray;
+		border-bottom: 1px solid rgb(215, 215, 215);
 	}
 
 	.story-info {
